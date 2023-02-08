@@ -16,4 +16,4 @@
 | FaceDetection | 臉部辨識 | 
 | maatwebsite/excel | Excel匯出 | 
 
-<p><a href="https://drive.google.com/file/d/1P6kfvA6k4ak6rTnMl6KZE6ziPqwmZmU1/view?usp=share_link">功能簡介</a> 更多介紹</p>
+<p><a href="https://drive.google.com/file/d/1P6kfvA6k4ak6rTnMl6KZE6ziPqwmZmU1/view?usp=share_link">更多介紹</a> </p>
