@@ -1,7 +1,8 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\CommodityItemController;
+use  App\Http\Controllers\CommodityTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+//商品類型API
+Route::apiResource('CommodityType', CommodityTypeController::class);
+
+//商品內容API
+Route::apiResource('CommodityItem', CommodityItemController::class);

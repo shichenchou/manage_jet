@@ -5,6 +5,7 @@ use  App\Http\Livewire\TypeList;
 use  App\Http\Livewire\ItemList;
 use  App\Http\Livewire\OrderList;
 use  App\Http\Livewire\Shopping\Index;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,4 +39,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/shop', Index::class)->name('shop');
 });
 
-
+Route::get('/test', function () {
+    $res = DB::connection('mongodb');
+    dd($res);
+});
