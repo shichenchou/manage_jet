@@ -19,7 +19,7 @@
                     <x-jet-nav-link href="{{ route('shop') }}" :active="request()->routeIs('shop')">
                         新增訂單
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('Order') }}" :active="request()->routeIs('Order')">
+                    <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
                         訂單列表
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('type') }}" :active="request()->routeIs('type')">

@@ -35,7 +35,7 @@ Route::middleware([
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/type', TypeList::class)->name('type');
     Route::get('/item', ItemList::class)->name('item');
-    Route::get('/Order', OrderList::class)->name('Order');
+    Route::get('/order', OrderList::class)->name('order');
     Route::get('/shop', Index::class)->name('shop');
 });
 

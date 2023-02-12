@@ -74,7 +74,7 @@ class OrderList extends Component
         $set = $this->OrderService->changeStatus($this->modal_id);
         $this->showingStatusModal = false;
         //$this->resetList();
-        return redirect()->to('/Order');
+        return redirect()->to('/order');
     }
     //取消
     public function cancelStatus()
@@ -82,7 +82,7 @@ class OrderList extends Component
         $set = $this->OrderService->cancelStatus($this->modal_id);
         $this->showingStatusModal = false;
         //$this->resetList();
-        return redirect()->to('/Order');
+        return redirect()->to('/order');
     }
 
     //顯示訂單狀態列表
@@ -139,14 +139,14 @@ class OrderList extends Component
     public function searchPage()
     {
 
-        return redirect()->to('/Order?status=' . $this->status);
+        return redirect()->to('/order?status=' . $this->status);
     }
 
     //關鍵字搜尋
     public function searchKeywordPage()
     {
 
-        return redirect()->to('/Order?&keyword=' . $this->keyword);
+        return redirect()->to('/order?&keyword=' . $this->keyword);
     }
 
     //跳頁
@@ -160,7 +160,7 @@ class OrderList extends Component
             } else {
                 $getStr .= '&status=' . $this->status;
             }
-            return redirect()->to('/Order?page=' . $this->current_page . $getStr);
+            return redirect()->to('/order?page=' . $this->current_page . $getStr);
         }
     }
 

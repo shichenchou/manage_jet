@@ -80,7 +80,7 @@ class Index extends Component
             ]);
             return;
         }
-        return redirect()->to('/Order');
+        return redirect()->to('/order');
     }
 
     public function render()
@@ -104,6 +104,6 @@ class Index extends Component
     //返回
     public function backPage()
     {
-        return redirect()->to('/Order');
+        return redirect()->to('/order');
     }
 }
