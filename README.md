@@ -15,5 +15,7 @@
 | Jetstream | 會員登入 | 
 | FaceDetection | 照片臉部辨識 | 
 | maatwebsite/excel | Excel匯出 | 
+| laravel/socialite| 社群登入方式 | 
+| tsaiyihua/laravel-ecpay | 支援綠界支付 | 
 
 <p><a href="https://drive.google.com/file/d/1P6kfvA6k4ak6rTnMl6KZE6ziPqwmZmU1/view?usp=share_link">更多介紹</a> </p>
