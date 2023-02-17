@@ -33,13 +33,15 @@ Route::middleware([
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::get('/type', TypeList::class)->name('type');
-    Route::get('/item', ItemList::class)->name('item');
-    Route::get('/order', OrderList::class)->name('order');
+    Route::get('/type', TypeList::class)->name('type')->middleware('can:admin');
+    Route::get('/item', ItemList::class)->name('item')->middleware('can:admin');
+    Route::get('/order', OrderList::class)->name('order')->middleware('can:admin');
     Route::get('/shop', Index::class)->name('shop');
 });
 
-Route::get('/test', function () {
+
+
+/*Route::get('/test', function () {
     $res = DB::connection('mongodb');
     dd($res);
-});
+});*/

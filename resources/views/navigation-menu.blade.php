@@ -19,6 +19,8 @@
                     <x-jet-nav-link href="{{ route('shop') }}" :active="request()->routeIs('shop')">
                         新增訂單
                     </x-jet-nav-link>
+                      <!-- 系統管理者 -->
+                    @can('manager')
                     <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
                         訂單列表
                     </x-jet-nav-link>
@@ -28,6 +30,7 @@
                     <x-jet-nav-link href="{{ route('item') }}" :active="request()->routeIs('item')">
                         建立商品
                     </x-jet-nav-link>
+                    @endcan
                 </div>
             </div>
 
