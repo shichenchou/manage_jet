@@ -39,11 +39,11 @@
                         忘記密碼
                     </a>
                 @endif
-
                 <x-jet-button class="ml-4">
                     登入
                 </x-jet-button>
             </div>
         </form>
+        <a class="ml-4" style="background-color:#3b5998;font-weight:bold;color:white;" href="/facebook-login">Facebook 快速登入<a>
     </x-jet-authentication-card>
 </x-guest-layout>

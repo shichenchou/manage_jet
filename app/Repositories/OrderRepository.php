@@ -22,6 +22,7 @@ class OrderRepository extends BasicRepository implements OrderInterface
         //欄位
         $this->field = array(
             'id'        =>     ['id'],
+            'row'        =>     ['id','basic_price','item_price','status'],
             'status'    =>     ['id', 'status'],
             'list'      =>     ['*'],
         );
@@ -104,7 +105,6 @@ class OrderRepository extends BasicRepository implements OrderInterface
                     break;
                 case 'status':
                     $query->where('status', '=', $val);
-
                     break;
                     //關鍵字
                 case 'keyword':
@@ -113,6 +113,9 @@ class OrderRepository extends BasicRepository implements OrderInterface
                     }
                     $query = $this->ByKeyword($query, $val, ['ig', 'name', 'phone']);
 
+                    break;
+                case 'user_id':
+                    $query->where('user_id', '=', $val);
                     break;
                 default:
 

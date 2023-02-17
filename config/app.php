@@ -162,7 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Arhey\FaceDetection\FaceDetectionServiceProvider::class,
-        Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -234,8 +234,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'FaceDetection' => Arhey\FaceDetection\Facades\FaceDetection::class,
-        'Mongo' => Jenssegers\Mongodb\MongodbServiceProvider::class,
-
+        'Socialite' => Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
 ];

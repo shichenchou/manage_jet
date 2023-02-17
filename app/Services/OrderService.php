@@ -11,6 +11,7 @@ use App\Repositories\CommodityItemRepository;
 use App\Repositories\OrderLogRepository;
 use App\Repositories\OrderRepository;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class OrderService extends BasicService
 {
@@ -178,8 +179,11 @@ class OrderService extends BasicService
         }
 
         if ($id == 0) {
+
             $status = 'draft';
             $data['status'] = $status;
+            $data['user_id'] = Auth::id();
+
             $set = $this->OrderRepository->create($data)->toArray();
 
             $new_id = isset($set['id']) ? (int) $set['id'] : 0;
@@ -241,6 +245,24 @@ class OrderService extends BasicService
             return false;
         }
         $data = ['status' => $new_status];
+        $set = $this->OrderRepository->updateById($id, $data);
+
+        if ($set) {
+            $data['order_id'] = $id;
+            return $this->OrderLogRepository->create($data);
+        } else {
+            return false;
+        }
+    }
+    public function changeStatusToSuccess($id)
+    {
+        $get_status = $this->OrderRepository->getStatusById($id)->toArray();
+        $status = isset($get_status['status']) ? $get_status['status'] : '';
+        if ($status == '') {
+            return false;
+        }
+
+        $data = ['status' => 'succeed'];
         $set = $this->OrderRepository->updateById($id, $data);
 
         if ($set) {
